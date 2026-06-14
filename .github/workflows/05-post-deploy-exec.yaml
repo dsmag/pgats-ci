@@ -3,10 +3,9 @@
 name: 'Execução por Deploy'
 
 #gatilhos / triggers - regras de disparo
-#gatilho manual = workflow_dispatch 
+#gatilho manual = workflow_dispatch
 #gatilho agendado = schedule
 #gatilho por conclusão de outra pipeline = workflow_run
-
 
 on:
   workflow_run:
@@ -17,7 +16,6 @@ on:
 # tarefas dentro da pipeline = jobs
 
 jobs:
-
   #nome do job
   e2e-tests:
     #maquina onde o job vai rodar
@@ -41,12 +39,12 @@ jobs:
 
       # instalação das depêndencias
       - name: Intalando depêndencias
-        run: yarn      
+        run: yarn
 
       # instalação dos Browsers do Playwright
       - name: Intalando Browsers do Playwright
-        run: yarn playwright install     
+        run: yarn playwright install
 
       #executar os testes e2e
       - name: Executando testes e2e
-        run: yarn run e2e  
+        run: yarn run e2e
